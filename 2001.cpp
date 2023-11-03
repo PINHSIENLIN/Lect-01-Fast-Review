@@ -21,5 +21,4 @@ int main(){
         cout << "wrong answer, answer is " << ans << endl;
     }
     return 0;
-
 }
