@@ -12,32 +12,33 @@
 
 #include<iostream>
 #include <stdio.h>
+#define R 3
+#define C 3
 using namespace std;
 
 int main(){
-    int a[3][3] = {{1,2,3},
+    int a[R][C] = {{1,2,3},
                    {4,5,6},
                    {7,8,9}};
 
-    int b[3][3] = {{2,4,6},
+    int b[R][C] = {{2,4,6},
                    {8,10,12},
                    {14,16,18}};
-
-    int c[3][3];
+    // Initialization
+    int c[R][C] = {0};
     
-    for (int i = 0; i <= 2; i++)
-    {
-        for (int j = 0; j <= 2; j++)
-        {
-           c[i][j] = a[i][0]*b[0][j] + a[i][1]*b[1][j] + a[i][2]*b[2][j];
-        }
+    for (int i = 0; i < R; i++)
+        for (int j = 0; j < C; j++)
+            for (int k = 0; k < R; k++)
+                c[i][j] += a[i][k] * b[k][j];
+      
         
-    }
+
     
     // Print C matrix
-    for (int i = 0; i <= 2; i++)
+    for (int i = 0; i < R; i++)
     {
-        for (int j = 0; j <= 2; j++)
+        for (int j = 0; j < C; j++)
         {
             printf("%-5d",c[i][j]);
         }
